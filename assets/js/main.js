@@ -1,19 +1,6 @@
 ;(function () {
 	'use strict';
 
-	// iPad and iPod detection
-	var isiPad = function(){
-		return (navigator.platform.indexOf("iPad") != -1);
-	};
-
-	var isiPhone = function(){
-	    return (
-			(navigator.platform.indexOf("iPhone") != -1) ||
-			(navigator.platform.indexOf("iPod") != -1)
-	    );
-	};
-
-
 	var fullHeight = function() {
 
 		$('.js-fullheight').css('height', $(window).height());
@@ -49,11 +36,8 @@
 							el.removeClass('item-animate');
 						},  k * 200, 'easeInOutExpo' );
 					});
-
 				}, 100);
-
 			}
-
 		} , { offset: '85%' } );
 	};
 
@@ -85,7 +69,7 @@
 		owl.owlCarousel({
 			 animateOut: 'fadeOut',
 			 animateIn: 'fadeIn',
-			 margin: 20,
+			 margin: 0,
 		   autoplay: true,
 			 loop:true,
 			 touchDrag: false,
@@ -93,28 +77,6 @@
 		   autoplayHoverPause: false,
 		   items: 1,
 		});
-		//Projects Carousel
-		var owl1 = $('.second-carousel');
-		owl1.owlCarousel({
-			//  animateOut: 'fadeOut',
-			 animateIn: 'fadeIn',
-			 margin: 20,
-		   autoplay: true,
-		   loop:true,
-			 nav: false,
-			 dots: true,
-			 dotsData: true,
-		   mouseDrag: true,
-		   autoplayHoverPause: false,
-		   center: true,
-			 items: 1,
-		});
-
-		// Resets owl carousel autoplay timeout after user action
-			owl1.on('changed.owl.carousel', function(e) {
-			owl1.trigger('stop.owl.autoplay');
-			owl1.trigger('play.owl.autoplay');
-	});
 	};
 
 	// Document on load
